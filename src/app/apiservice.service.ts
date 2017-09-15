@@ -15,11 +15,12 @@ export class APIServiceService {
         for (var i = 0; i < result.json().length; i++) {
           var user = result.json()[i];
           this.UserList.push({
+            "id" : user.id,
             "name" : user.name,
             "email" : user.email,
-            "address" : user.address,
-            "company" : user.company,
-          }) 
+            "address" : user.address.street,
+            "company" : user.company.name,
+          })
         }
       },
       error => {console.log(error);}
