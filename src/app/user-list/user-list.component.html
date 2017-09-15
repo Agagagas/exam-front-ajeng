@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default col-md-offset-2 col-md-8" style="margin-top:8px; background-color: white; border-top-left-radius:0px; border-top-right-radius:0px;">
+  <table class="table table-striped" style="margin-top:20px;">
+    <tr>
+      <th><label>Name</label></th>
+      <th><label>Email</label></th>
+      <th><label>Address</label></th>
+      <th><label>Company</label></th>
+      <th><label>Action</label></th>
+    </tr>
+    <tr *ngFor="let x of data.UserList">
+      <td>{{ x.name }}</td>
+      <td>{{ x.email }}</td>
+      <td>{{ x.address }}</td>
+      <td>{{ x.company }}</td>
+      <td>
+        <button class="btn btn-default" type="button" (click)="del(x.$key)"> 
+        <span class="glyphicon glyphicon-trash"></span>  Remove</button>
+      </td>
+    </tr>
+  </table>
+</nav>
